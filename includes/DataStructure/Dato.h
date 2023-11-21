@@ -9,9 +9,9 @@ private:
     Persona participante2;
     int totalPremio;
     int emision;
-    int codigo;
+
 public:
-    Dato(Persona participante1, Persona participante2, int totalPremio, int emision);
+    Dato(Persona participante1, Persona participante2, int emision);
 
     Persona getParticipante1();
     Persona getParticipante2();

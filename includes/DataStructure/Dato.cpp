@@ -3,12 +3,11 @@
 
 using namespace std;
 
-Dato::Dato(Persona participante1, Persona participante2, int totalPremio, int emision){
+Dato::Dato(Persona participante1, Persona participante2, int emision){
     this->participante1 = participante1;
     this->participante2 = participante2;
-    this->totalPremio = totalPremio;
+    this->totalPremio = 0;
     this->emision = emision;
-    this->codigo = codigo;
 }
 
 string Dato::toString(){

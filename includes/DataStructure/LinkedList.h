@@ -6,10 +6,8 @@
 class LinkedList{
 private:
     Nodo* cabeza;
-    int emision;
 public:
-    LinkedList(int emision);
-
+    LinkedList();
     void agregar(Dato* datos);
     void mostrar();
     void eliminar(int emision);
