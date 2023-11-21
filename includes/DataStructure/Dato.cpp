@@ -1,24 +1,36 @@
-// #include "Dato.h"
+#include "Dato.h"
+#include "../Persona.h"
 
-// using namespace std;
+using namespace std;
 
-// Dato::Dato(Paciente paciente, int codigo, string infoAdicional){
-//     this->paciente = paciente;
-//     this->codigo = codigo;
-//     this->infoAdicional = infoAdicional;
-// }
+Dato::Dato(Persona participante1, Persona participante2, int totalPremio, int emision){
+    this->participante1 = participante1;
+    this->participante2 = participante2;
+    this->totalPremio = totalPremio;
+    this->emision = emision;
+    this->codigo = codigo;
+}
 
-// Paciente Dato::getPaciente(){
-//     return this->paciente;
-// }
+string Dato::toString(){
+    return "Emision numero: "+ to_string(this->emision)+".\n Participante 1: "+this->participante1.toString()+".\n Participante 2: "+this->participante2.toString()+".\n Total de premios: "+to_string(this->totalPremio)+".";
+}
 
-// int Dato::getCodigo(){
-//     return this->codigo;
-// }
+Persona Dato::getParticipante1(){
+    return this->participante1;
+}
 
-// string Dato::getInfoAdicional(){
-//     return this->infoAdicional;
-// }
-// string Dato::toString(){
-//     return "[" + paciente.getNombre() + ", " + to_string(paciente.getEdad()) + " anios. Tipo de emergencia: "+ to_string(codigo)+". Info adicional: "+this->infoAdicional+" ]";
-// }
+Persona Dato::getParticipante2(){
+    return this->participante2;
+}
+
+int Dato::getTotalPremio(){
+    return this->totalPremio;
+}
+
+int Dato::getEmision(){
+    return this->emision;
+}
+
+void Dato::calculaPremio(){
+    this->totalPremio = this->participante1.getDineroAsegurado() + this->participante2.getDineroAsegurado();
+}

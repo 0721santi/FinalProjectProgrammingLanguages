@@ -6,15 +6,13 @@
 class LinkedList{
 private:
     Nodo* cabeza;
-    void agregaATexto(std::string msg);
+    int emision;
 public:
-    LinkedList();
+    LinkedList(int emision);
 
     void agregar(Dato* datos);
     void mostrar();
-    void pop();
-    Dato* getDatoHead();
-    Nodo* getHead();
+    void eliminar(int emision);
     int length();
 };
 

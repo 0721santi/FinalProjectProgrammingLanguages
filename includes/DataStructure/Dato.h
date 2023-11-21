@@ -1,21 +1,24 @@
-// #ifndef DATO_H
-// #define DATO_H
+#ifndef DATO_H
+#define DATO_H
+#include <string>
+#include "../Persona.h"
 
-// #include <string>
+class Dato{
+private:
+    Persona participante1;
+    Persona participante2;
+    int totalPremio;
+    int emision;
+    int codigo;
+public:
+    Dato(Persona participante1, Persona participante2, int totalPremio, int emision);
 
-// class Dato{
-// private:
-//     Paciente paciente;
-//     int codigo;
-//     std::string infoAdicional;
-// public:
-//     Dato(Paciente paciente, int codigo, std::string infoAdicional);
+    Persona getParticipante1();
+    Persona getParticipante2();
+    int getTotalPremio();
+    int getEmision();
+    void calculaPremio();
+    std::string toString();
+};
 
-//     Paciente getPaciente();
-//     int getCodigo();
-//     std::string getInfoAdicional();
-
-//     std::string toString();
-// };
-
-// #endif // DATO_H
+#endif // DATO_H

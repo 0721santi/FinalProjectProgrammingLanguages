@@ -100,3 +100,23 @@ void Persona::setUltimaPregunta(int ultimaPregunta){
 void Persona::setDineroAsegurado(int dineroAsegurado){
     this->dineroAsegurado = dineroAsegurado;
 }
+
+string Persona::toString(){
+    string mensaje = "[Datos: "+this->nombre+ ", " + this->email + ", " + this->numTelefono + "]\n";
+    string comodines = "";
+    if(!this->fifthyFifthy && !this->publico && !this->llamada){
+        comodines = "[No utilizo comodines]";
+        return mensaje + comodines;
+    }
+    comodines = "[Comodines:";
+    if(this->llamada){
+        comodines = comodines+" utilizo la llamada";
+    }
+    if(this->publico){
+        comodines = comodines+" utilizo ayuda del publico";
+    }
+    if(this->fifthyFifthy){
+        comodines = comodines+" utilizo el 50/50";
+    }
+    return mensaje + comodines;
+}

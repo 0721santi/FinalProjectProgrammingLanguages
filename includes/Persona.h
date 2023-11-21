@@ -20,6 +20,7 @@ public:
     bool getLlamada();
     bool getPublico();
     bool getFifthyFifthy();
+    int getEdad();
     int getUltimaPregunta();
     int getDineroAsegurado();
     int getTiempoClasificacion();
@@ -28,6 +29,8 @@ public:
     void setFifthyFifthy(bool fifthyFifthy);
     void setUltimaPregunta(int ultimaPregunta);
     void setDineroAsegurado(int dineroAsegurado);
+
+    std::string toString();
 };
 
 #endif // __PERSONA_H__
