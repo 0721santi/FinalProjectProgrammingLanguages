@@ -3,20 +3,13 @@
 
 using namespace std;
 
-LinkedList::LinkedList(){
-    this->cabeza = nullptr;
-}
+LinkedList::LinkedList() : cabeza(nullptr){}
 
 void LinkedList::agregar(Dato* datos){
-    cout << "a" << endl;
     Nodo* nuevoNodo = new Nodo(datos);
-    cout << "b" << endl;
-    cout << "C" << endl;
     if(!cabeza){
-        cout << "CC" << endl;
         cabeza = nuevoNodo;
     }else{
-        cout << "CCC" << endl;
         Nodo* actual = cabeza;
         while(actual->getSiguiente()){
             actual = actual->getSiguiente();
@@ -29,7 +22,7 @@ void LinkedList::mostrar(){
     Nodo* actual = cabeza;
     string msg = "";
     while (actual) {
-        msg = msg+actual->getDatos()->toString() + "\n";
+        msg = msg+actual->getDatos()->toString() + "\n\n\n";
         actual = actual->getSiguiente();
     }
     cout << msg << endl;

@@ -20,7 +20,6 @@ public:
     bool getLlamada();
     bool getPublico();
     bool getFifthyFifthy();
-    int getEdad();
     int getUltimaPregunta();
     int getDineroAsegurado();
     int getTiempoClasificacion();

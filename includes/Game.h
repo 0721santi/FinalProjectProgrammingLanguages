@@ -5,9 +5,10 @@
 
 class Game{
 private:
-    LinkedList* resumenSemanal;
+    LinkedList resumenSemanal;
+    int totalPremios;
     int determinarPremio(int nivel);
-    void juegoParticipante(Persona persona);
+    void juegoParticipante(Persona& persona);
     bool respondePregunta(int cantidad);
     bool respondePreguntaComodin();
 public:

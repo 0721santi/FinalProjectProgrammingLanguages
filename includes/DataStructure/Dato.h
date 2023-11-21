@@ -13,8 +13,8 @@ private:
 public:
     Dato(Persona participante1, Persona participante2, int emision);
 
-    Persona getParticipante1();
-    Persona getParticipante2();
+    Persona& getParticipante1();
+    Persona& getParticipante2();
     int getTotalPremio();
     int getEmision();
     void calculaPremio();

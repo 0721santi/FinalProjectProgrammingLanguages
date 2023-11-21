@@ -45,6 +45,7 @@ Persona::Persona(){
     this->publico = false;
     this->tiempoClasificacion = randomGenPersona(1, 60);
     this->dineroAsegurado = 0;
+    this->ultimaPregunta = 0;
 }
 
 string Persona::getNombre(){
@@ -108,17 +109,17 @@ string Persona::toString(){
     string comodines = "";
     if(!this->fifthyFifthy && !this->publico && !this->llamada){
         comodines = "[No utilizo comodines]\n";
-        return mensaje + comodines + "[Premio: $"+to_string(this->dineroAsegurado)+"]";
+        return mensaje + comodines + "[Ultima pregunta: "+to_string(this->ultimaPregunta)+"]\n[Premio: $"+to_string(this->dineroAsegurado)+"]";
     }
     comodines = "[Comodines:";
     if(this->llamada){
-        comodines = comodines+" utilizo la llamada";
+        comodines = comodines+" Utilizo la llamada";
     }
     if(this->publico){
-        comodines = comodines+" utilizo ayuda del publico";
+        comodines = comodines+" Utilizo ayuda del publico";
     }
     if(this->fifthyFifthy){
-        comodines = comodines+" utilizo el 50/50";
+        comodines = comodines+" Utilizo el 50/50";
     }
-    return mensaje + comodines+"]\n[Premio: $"+to_string(this->dineroAsegurado)+"]";
+    return mensaje + comodines+"]\n[Ultima pregunta: "+to_string(this->ultimaPregunta)+"]\n[Premio: $"+to_string(this->dineroAsegurado)+"]";
 }

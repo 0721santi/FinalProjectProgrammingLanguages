@@ -24,25 +24,20 @@ double ayudaComodin(double lwrIdx, double highIdx){
 
 Game::Game(){
     LinkedList resumenSemanal;
+    this->totalPremios = 0;
 }
 
 void Game::simularSemana(){
     for(int i=0;i<5;i++){
-        cout << "Dia "+to_string(i+1)+"." <<endl;
         Dato* emision = new Dato(Persona(), Persona(), i);
-        cout << "Cree emision" << endl;
         juegoParticipante(emision->getParticipante1());
-        cout << "juego 1" << endl;
         juegoParticipante(emision->getParticipante2());
-        cout << "juego 2" << endl;
         emision->calculaPremio();
-        cout << "Calcula premio" << endl;
-        this->resumenSemanal->agregar(emision);
-        cout << "Llegue aqui" << endl;
+        this->resumenSemanal.agregar(emision);
     }
 }
 
-void Game::juegoParticipante(Persona jugador){
+void Game::juegoParticipante(Persona& jugador){
     bool continua = true;
     int nivel = 0;
     while(continua && nivel < 15){
@@ -50,7 +45,7 @@ void Game::juegoParticipante(Persona jugador){
             continua = respondePregunta(4);
         }else{
         int opc1 = randomGen(0,1);
-            if(opc1 == 0){
+            if(opc1 == 1){
                 if(!jugador.getLlamada()){
                     continua = respondePreguntaComodin();
                     jugador.setLlamada(true);
@@ -71,15 +66,20 @@ void Game::juegoParticipante(Persona jugador){
             int plantar = randomGen(0,1);
             if(plantar == 1){
                 jugador.setUltimaPregunta(nivel);
-                jugador.setDineroAsegurado(determinarPremio(nivel));
+                int premio = determinarPremio(nivel);
+                jugador.setDineroAsegurado(premio);
+                this->totalPremios+= premio;
                 continua = false;
                 return;
             }
         }else{
             jugador.setUltimaPregunta(nivel);
-            if(nivel < 5){jugador.setDineroAsegurado(0);}
-            else if(nivel < 10){jugador.setDineroAsegurado(1000000);}
-            else {jugador.setDineroAsegurado(10000000);}
+            int premio;
+            if(nivel < 5){premio = 0;}
+            else if(nivel < 10){premio = 1000000;}
+            else {premio = 10000000;}
+            this->totalPremios+= premio;
+            jugador.setDineroAsegurado(premio);
             continua = false;
             return;
         }
@@ -87,12 +87,13 @@ void Game::juegoParticipante(Persona jugador){
     if(continua){
         jugador.setUltimaPregunta(nivel);
         jugador.setDineroAsegurado(300000000);
+        this->totalPremios+=300000000;
     }
 }
 
 bool Game::respondePregunta(int cantidad){
     int opcCorrecta = randomGen(1,cantidad);
-    int opcParticipante = randomGen(1,cantidad);
+    int opcParticipante = randomGen(1,opcCorrecta);
     return opcCorrecta == opcParticipante;
 }
 
@@ -108,7 +109,12 @@ bool Game::respondePreguntaComodin(){
         if(posibilidades[i] > mayor){posibleCorrecta = i;}
         if(porcentajeAcumulado == 0.0){break;}
     }
-    return (posibleCorrecta+1) == opcCorrecta;
+    int tomaODeja = randomGen(0,1);
+    if(tomaODeja == 0){
+        return respondePregunta(4);
+    }else{
+        return (posibleCorrecta+1) == opcCorrecta;
+    }
 }
 
 int Game::determinarPremio(int nivel){
@@ -147,5 +153,6 @@ int Game::determinarPremio(int nivel){
 }
 
 void Game::mostrarResultados() {
-    this->resumenSemanal->mostrar();
+    this->resumenSemanal.mostrar();
+    cout << "TOTAL PREMIOS ESTA SEMANA: $" << this->totalPremios << endl;
 }
