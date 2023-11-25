@@ -27,9 +27,6 @@ Este proyecto consiste en una implementación del famoso juego "Quién quiere se
 
 ## Ejemplo de ejecución
 
-## Explicación del código
-Si necesita una explicación sobre el código, pueden consultar el siguiente enlace:
-
 Bienvenido a quien quiere ser millonario.
 RESUMEN SEMANAL
 EMISION NUMERO: 1.
@@ -99,6 +96,11 @@ EMISION NUMERO: 5.
 
 
 TOTAL PREMIOS ESTA SEMANA: $300000
+
+
+
+## Explicación del código
+Si necesita una explicación sobre el código, pueden consultar el siguiente enlace:\
 
 ## Contacto
 
