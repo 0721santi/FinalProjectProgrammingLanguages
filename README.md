@@ -100,7 +100,7 @@ TOTAL PREMIOS ESTA SEMANA: $300000
 
 
 ## Explicación del código
-Si necesita una explicación sobre el código, pueden consultar el siguiente enlace:
+Si necesita una explicación sobre el código, pueden consultar el siguiente enlace:<br>
 https://youtu.be/_vtmmIhxvJs
 
 ## Contacto
