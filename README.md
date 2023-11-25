@@ -22,8 +22,8 @@ Este proyecto consiste en una implementación del famoso juego "Quién quiere se
 - El juego sigue un formato de premiación por preguntas, donde se acumula un premio mayor a medida que se responden más preguntas correctamente.
 
 ## Requisitos previos
-- Entorno de desarrollo: Se utilizó [nombre del entorno de desarrollo] para el desarrollo del proyecto.
-- Compilador de C++: Se recomienda [nombre del compilador de C++], que puede ser instalado desde [ubicación de instalación].
+- Entorno de desarrollo: Se utilizó [Visual Studio Code] para el desarrollo del proyecto.
+- Compilador de C++: Se recomienda [g++.exe (Rev2, Built by MSYS2 project) 13.2.0], que puede ser instalado desde [https://www.msys2.org].
 
 ## Ejemplo de ejecución
 
